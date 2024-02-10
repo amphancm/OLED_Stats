@@ -71,56 +71,26 @@ The script is pre-configured for 128x64 I2C OLED Display, but can easily be modi
 6. Next, we need to install the CircuitPython libraries specific to the display. Start by entering the following commands:
 
 ```shell
-    $ sudo pip3 install adafruit-circuitpython-ssd1306
-    $ sudo pip3 install psutil
-    $ sudo reboot
-    $ sudo apt-get install python3-pil
+    $ pip3 install adafruit-circuitpython-ssd1306
+    $ pip3 install psutil
+    $ pip3 install pillow
+
 ```
 
 7. Now we need to download the python script from out github:
 
 ```shell
-    $ git clone https://github.com/mklements/OLED_Stats.git
+    $ git clone https://github.com/amphancm/OLED_Stats.git
 
     $ cd OLED_Stats
-    $ cp PixelOperator.ttf ~/PixelOperator.ttf
-    $ cp stats.py ~/stats.py
+    $ python3 stats.py
     
-    $ cp psutilstats.py ~/psutilstats.py
+    $ python3 psutilstats.py 
     
-    $ cp lineawesome-webfont.ttf ~/lineawesome-webfont.ttf
-    $ cp monitor.py ~/monitor.py
+    $ python3 monitor.py 
 
 ```
 
-8. For activating the `crontab` follow the procedure:
-
-```shell
-    $ crontab -e
-```
-
-**Add this at the bottom:**
-
-Remember to change your username (pi below) if you're not using the default username
-
-```
-    @reboot python3 /home/pi/stats.py &
-
-    OR
-    
-    @reboot python3 /home/pi/psutilstats.py &
-    
-    OR
-
-    @reboot python3 /home/pi/monitor.py &
-```
-
-9. At the end DELETE the OLED_Stats folder and reboot
-
-```shell
-    $ sudo rm -rf OLED_Stats
-    $ sudo reboot
-```
 
 ## Display Issues:
 
