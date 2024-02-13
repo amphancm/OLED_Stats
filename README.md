@@ -82,6 +82,8 @@ The script is pre-configured for 128x64 I2C OLED Display, but can easily be modi
 ```shell
     $ git clone https://github.com/amphancm/OLED_Stats.git
 
+    $ source .venv/bin/activate
+
     $ cd OLED_Stats
     $ python3 stats.py
     
